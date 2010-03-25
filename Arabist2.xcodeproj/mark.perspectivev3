@@ -202,46 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>4D44FA10115ABAA8005FF898</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>NewWordViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>4D44FA11115ABAA8005FF898</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>NewWordViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>4D5AFD1E115BE72C00623F69</string>
-						<key>history</key>
-						<array>
-							<string>4D44FA15115BE622005FF898</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1080, 681}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>320 -722 1080 722 320 -800 1280 800 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>4D44F9D41153650D005FF898</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>FilterViewController.m</string>
@@ -256,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4D5AFD1F115BE72C00623F69</string>
+						<string>4D66FC02115BE84700DCF6C9</string>
 						<key>history</key>
 						<array>
-							<string>4D44FA16115BE622005FF898</string>
+							<string>4D5AFD1F115BE72C00623F69</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -409,7 +369,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4D5AFD17115BE72C00623F69</string>
+										<string>4D66FC01115BE84700DCF6C9</string>
 										<key>history</key>
 										<array>
 											<string>4DEC78BB1143BE550055A28C</string>
@@ -429,7 +389,7 @@
 											<string>4D44FA02115AB959005FF898</string>
 											<string>4D44FA03115AB959005FF898</string>
 											<string>4D44FA04115AB959005FF898</string>
-											<string>4D44FA14115BE622005FF898</string>
+											<string>4D5AFD17115BE72C00623F69</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -443,18 +403,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {869, 420}}</string>
+								<string>{{0, 0}, {869, 412}}</string>
 								<key>RubberWindowFrame</key>
 								<string>548 360 1215 723 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>420pt</string>
+							<string>412pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>257pt</string>
+							<string>265pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -468,7 +428,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {869, 230}}</string>
+										<string>{{10, 27}, {869, 238}}</string>
 										<key>RubberWindowFrame</key>
 										<string>548 360 1215 723 0 0 1920 1178 </string>
 									</dict>
@@ -552,11 +512,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D5AFD10115BE67B00623F69</string>
+				<string>4D66FBF4115BE83A00DCF6C9</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>4D5AFD11115BE67B00623F69</string>
+				<string>4D66FBF5115BE83A00DCF6C9</string>
 				<string>4D67E1041142569B00F6E8E7</string>
-				<string>4D5AFD12115BE67B00623F69</string>
+				<string>4D66FBF6115BE83A00DCF6C9</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -705,14 +665,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4D5AFD18115BE72C00623F69</string>
+				<string>4D66FBF7115BE83A00DCF6C9</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>4D5AFD19115BE72C00623F69</string>
-				<string>4D5AFD1A115BE72C00623F69</string>
-				<string>4D5AFD1B115BE72C00623F69</string>
-				<string>4D5AFD1C115BE72C00623F69</string>
-				<string>4D5AFD1D115BE72C00623F69</string>
+				<string>4D66FBF8115BE83A00DCF6C9</string>
+				<string>4D66FBF9115BE83A00DCF6C9</string>
+				<string>4D66FBFA115BE83A00DCF6C9</string>
+				<string>4D66FBFB115BE83A00DCF6C9</string>
+				<string>4D66FBFC115BE83A00DCF6C9</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -746,10 +706,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4D5AFD20115BE72C00623F69</string>
-		<string>4D5AFD21115BE72C00623F69</string>
-		<string>4D44F9D41153650D005FF898</string>
+		<string>4D66FC03115BE84700DCF6C9</string>
+		<string>4D66FC00115BE83A00DCF6C9</string>
 		<string>4D44FA10115ABAA8005FF898</string>
+		<string>4D44F9D41153650D005FF898</string>
 		<string>/Users/mark/Documents/Arabist/Arabist2.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
