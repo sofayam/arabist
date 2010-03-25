@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* Arabist2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Arabist2AppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		4D44F99E1153600F005FF898 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9901153600F005FF898 /* ASIHTTPRequest.m */; };
+		4D44F99F1153600F005FF898 /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9911153600F005FF898 /* ASINSStringAdditions.m */; };
+		4D44F9A01153600F005FF898 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9931153600F005FF898 /* ASINetworkQueue.m */; };
+		4D44F9A11153600F005FF898 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9951153600F005FF898 /* ASIInputStream.m */; };
+		4D44F9A21153600F005FF898 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9991153600F005FF898 /* ASIFormDataRequest.m */; };
+		4D44F9A31153600F005FF898 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F99B1153600F005FF898 /* ASIAuthenticationDialog.m */; };
+		4D44F9A611536026005FF898 /* asihttpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9A411536026005FF898 /* asihttpViewController.m */; };
+		4D44F9AC115360C9005FF898 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D44F9AB115360C9005FF898 /* CFNetwork.framework */; };
+		4D44F9B01153617B005FF898 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D44F9AF1153617B005FF898 /* SystemConfiguration.framework */; };
+		4D44F9B211536197005FF898 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D44F9B111536197005FF898 /* libz.1.2.3.dylib */; };
+		4D44F9BD11536226005FF898 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9BC11536226005FF898 /* Reachability.m */; };
+		4D44F9CC11536441005FF898 /* asihttpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D44F9CB11536441005FF898 /* asihttpViewController.xib */; };
+		4D5F358B11535C9500A5D456 /* ExistingWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5F358A11535C9500A5D456 /* ExistingWordViewController.m */; };
+		4D5F359011535CCB00A5D456 /* NewWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5F358F11535CCB00A5D456 /* NewWordViewController.m */; };
+		4D5F359711535D5C00A5D456 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5F359611535D5C00A5D456 /* MyTableViewController.m */; };
+		4D67E0BC1142509200F6E8E7 /* MyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D67E0BA1142509200F6E8E7 /* MyTableViewController.xib */; };
+		4D973F2B1142CBF600FFB119 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D973F291142CBF600FFB119 /* FilterViewController.m */; };
+		4D973F2C1142CBF600FFB119 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D973F2A1142CBF600FFB119 /* FilterViewController.xib */; };
+		4D973F481142CEDC00FFB119 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D973F461142CEDC00FFB119 /* AddViewController.m */; };
+		4D973F491142CEDC00FFB119 /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D973F471142CEDC00FFB119 /* AddViewController.xib */; };
+		4DEC781C1143AA1D0055A28C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEC781B1143AA1D0055A28C /* CoreData.framework */; };
+		4DEC782F1143AF710055A28C /* arabist.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 4DEC782E1143AF710055A28C /* arabist.xcdatamodel */; };
+		4DEC78D81143C9EF0055A28C /* NewWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEC78D61143C9EF0055A28C /* NewWordViewController.xib */; };
+		4DF63ECC114E3F9100490104 /* ExistingWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF63ECA114E3F9100490104 /* ExistingWordViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* Arabist2AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arabist2AppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* Arabist2AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arabist2AppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Arabist2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arabist2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Arabist2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arabist2_Prefix.pch; sourceTree = "<group>"; };
+		4D44F9901153600F005FF898 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = ASIHTTP/ASIHTTPRequest.m; sourceTree = "<group>"; };
+		4D44F9911153600F005FF898 /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINSStringAdditions.m; path = ASIHTTP/ASINSStringAdditions.m; sourceTree = "<group>"; };
+		4D44F9921153600F005FF898 /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINSStringAdditions.h; path = ASIHTTP/ASINSStringAdditions.h; sourceTree = "<group>"; };
+		4D44F9931153600F005FF898 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = ASIHTTP/ASINetworkQueue.m; sourceTree = "<group>"; };
+		4D44F9941153600F005FF898 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = ASIHTTP/ASINetworkQueue.h; sourceTree = "<group>"; };
+		4D44F9951153600F005FF898 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIInputStream.m; path = ASIHTTP/ASIInputStream.m; sourceTree = "<group>"; };
+		4D44F9961153600F005FF898 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIInputStream.h; path = ASIHTTP/ASIInputStream.h; sourceTree = "<group>"; };
+		4D44F9971153600F005FF898 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestConfig.h; path = ASIHTTP/ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		4D44F9981153600F005FF898 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequest.h; path = ASIHTTP/ASIHTTPRequest.h; sourceTree = "<group>"; };
+		4D44F9991153600F005FF898 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIFormDataRequest.m; path = ASIHTTP/ASIFormDataRequest.m; sourceTree = "<group>"; };
+		4D44F99A1153600F005FF898 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIFormDataRequest.h; path = ASIHTTP/ASIFormDataRequest.h; sourceTree = "<group>"; };
+		4D44F99B1153600F005FF898 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = ASIHTTP/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		4D44F99C1153600F005FF898 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = ASIHTTP/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		4D44F9A411536026005FF898 /* asihttpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = asihttpViewController.m; sourceTree = "<group>"; };
+		4D44F9A511536026005FF898 /* asihttpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asihttpViewController.h; sourceTree = "<group>"; };
+		4D44F9AB115360C9005FF898 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4D44F9AF1153617B005FF898 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4D44F9B111536197005FF898 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		4D44F9BB11536226005FF898 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4D44F9BC11536226005FF898 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4D44F9CB11536441005FF898 /* asihttpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = asihttpViewController.xib; sourceTree = "<group>"; };
+		4D5F358A11535C9500A5D456 /* ExistingWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingWordViewController.m; sourceTree = "<group>"; };
+		4D5F358C11535CAB00A5D456 /* ExistingWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingWordViewController.h; sourceTree = "<group>"; };
+		4D5F358D11535CB800A5D456 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		4D5F358F11535CCB00A5D456 /* NewWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewWordViewController.m; sourceTree = "<group>"; };
+		4D5F359111535CD200A5D456 /* NewWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewWordViewController.h; sourceTree = "<group>"; };
+		4D5F359611535D5C00A5D456 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		4D67E0BA1142509200F6E8E7 /* MyTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewController.xib; sourceTree = "<group>"; };
+		4D973F281142CBF600FFB119 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		4D973F291142CBF600FFB119 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		4D973F2A1142CBF600FFB119 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FilterViewController.xib; path = Classes/FilterViewController.xib; sourceTree = "<group>"; };
+		4D973F451142CEDC00FFB119 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		4D973F461142CEDC00FFB119 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		4D973F471142CEDC00FFB119 /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddViewController.xib; path = Classes/AddViewController.xib; sourceTree = "<group>"; };
+		4DEC781B1143AA1D0055A28C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4DEC782E1143AF710055A28C /* arabist.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = arabist.xcdatamodel; sourceTree = "<group>"; };
+		4DEC78D61143C9EF0055A28C /* NewWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewWordViewController.xib; sourceTree = "<group>"; };
+		4DF63ECA114E3F9100490104 /* ExistingWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExistingWordViewController.xib; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Arabist2-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Arabist2-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				4DEC781C1143AA1D0055A28C /* CoreData.framework in Frameworks */,
+				4D44F9AC115360C9005FF898 /* CFNetwork.framework in Frameworks */,
+				4D44F9B01153617B005FF898 /* SystemConfiguration.framework in Frameworks */,
+				4D44F9B211536197005FF898 /* libz.1.2.3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4D44F9A411536026005FF898 /* asihttpViewController.m */,
+				4D44F9A511536026005FF898 /* asihttpViewController.h */,
+				4D5F358A11535C9500A5D456 /* ExistingWordViewController.m */,
+				4D5F358C11535CAB00A5D456 /* ExistingWordViewController.h */,
+				1D3623240D0F684500981E51 /* Arabist2AppDelegate.h */,
+				1D3623250D0F684500981E51 /* Arabist2AppDelegate.m */,
+				4D5F359611535D5C00A5D456 /* MyTableViewController.m */,
+				4D5F358D11535CB800A5D456 /* MyTableViewController.h */,
+				4D973F461142CEDC00FFB119 /* AddViewController.m */,
+				4D973F451142CEDC00FFB119 /* AddViewController.h */,
+				4D973F281142CBF600FFB119 /* FilterViewController.h */,
+				4D973F291142CBF600FFB119 /* FilterViewController.m */,
+				4D5F359111535CD200A5D456 /* NewWordViewController.h */,
+				4D5F358F11535CCB00A5D456 /* NewWordViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Arabist2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				4D44F98B11535FFA005FF898 /* ASIHTTP */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Arabist2_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D44F9CB11536441005FF898 /* asihttpViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				4D973F2A1142CBF600FFB119 /* FilterViewController.xib */,
+				4D973F471142CEDC00FFB119 /* AddViewController.xib */,
+				4DEC78D61143C9EF0055A28C /* NewWordViewController.xib */,
+				4D67E0BA1142509200F6E8E7 /* MyTableViewController.xib */,
+				4DF63ECA114E3F9100490104 /* ExistingWordViewController.xib */,
+				8D1107310486CEB800E47090 /* Arabist2-Info.plist */,
+				4DEC782E1143AF710055A28C /* arabist.xcdatamodel */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				4DEC781B1143AA1D0055A28C /* CoreData.framework */,
+				4D44F9AB115360C9005FF898 /* CFNetwork.framework */,
+				4D44F9AF1153617B005FF898 /* SystemConfiguration.framework */,
+				4D44F9B111536197005FF898 /* libz.1.2.3.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D44F98B11535FFA005FF898 /* ASIHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				4D44F9901153600F005FF898 /* ASIHTTPRequest.m */,
+				4D44F9911153600F005FF898 /* ASINSStringAdditions.m */,
+				4D44F9921153600F005FF898 /* ASINSStringAdditions.h */,
+				4D44F9931153600F005FF898 /* ASINetworkQueue.m */,
+				4D44F9941153600F005FF898 /* ASINetworkQueue.h */,
+				4D44F9951153600F005FF898 /* ASIInputStream.m */,
+				4D44F9961153600F005FF898 /* ASIInputStream.h */,
+				4D44F9971153600F005FF898 /* ASIHTTPRequestConfig.h */,
+				4D44F9981153600F005FF898 /* ASIHTTPRequest.h */,
+				4D44F9991153600F005FF898 /* ASIFormDataRequest.m */,
+				4D44F99A1153600F005FF898 /* ASIFormDataRequest.h */,
+				4D44F99B1153600F005FF898 /* ASIAuthenticationDialog.m */,
+				4D44F99C1153600F005FF898 /* ASIAuthenticationDialog.h */,
+				4D44F9BA11536226005FF898 /* Reachability2.0 */,
+			);
+			name = ASIHTTP;
+			sourceTree = "<group>";
+		};
+		4D44F9BA11536226005FF898 /* Reachability2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				4D44F9BB11536226005FF898 /* Reachability.h */,
+				4D44F9BC11536226005FF898 /* Reachability.m */,
+			);
+			path = Reachability2.0;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Arabist2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Arabist2" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arabist2;
+			productName = Arabist2;
+			productReference = 1D6058910D05DD3D006BFB54 /* Arabist2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Arabist2" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Arabist2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				4D67E0BC1142509200F6E8E7 /* MyTableViewController.xib in Resources */,
+				4D973F2C1142CBF600FFB119 /* FilterViewController.xib in Resources */,
+				4D973F491142CEDC00FFB119 /* AddViewController.xib in Resources */,
+				4DEC78D81143C9EF0055A28C /* NewWordViewController.xib in Resources */,
+				4DF63ECC114E3F9100490104 /* ExistingWordViewController.xib in Resources */,
+				4D44F9CC11536441005FF898 /* asihttpViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* Arabist2AppDelegate.m in Sources */,
+				4D973F2B1142CBF600FFB119 /* FilterViewController.m in Sources */,
+				4D973F481142CEDC00FFB119 /* AddViewController.m in Sources */,
+				4DEC782F1143AF710055A28C /* arabist.xcdatamodel in Sources */,
+				4D5F358B11535C9500A5D456 /* ExistingWordViewController.m in Sources */,
+				4D5F359011535CCB00A5D456 /* NewWordViewController.m in Sources */,
+				4D5F359711535D5C00A5D456 /* MyTableViewController.m in Sources */,
+				4D44F99E1153600F005FF898 /* ASIHTTPRequest.m in Sources */,
+				4D44F99F1153600F005FF898 /* ASINSStringAdditions.m in Sources */,
+				4D44F9A01153600F005FF898 /* ASINetworkQueue.m in Sources */,
+				4D44F9A11153600F005FF898 /* ASIInputStream.m in Sources */,
+				4D44F9A21153600F005FF898 /* ASIFormDataRequest.m in Sources */,
+				4D44F9A31153600F005FF898 /* ASIAuthenticationDialog.m in Sources */,
+				4D44F9A611536026005FF898 /* asihttpViewController.m in Sources */,
+				4D44F9BD11536226005FF898 /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Arabist2_Prefix.pch;
+				INFOPLIST_FILE = "Arabist2-Info.plist";
+				PRODUCT_NAME = Arabist2;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Arabist2_Prefix.pch;
+				INFOPLIST_FILE = "Arabist2-Info.plist";
+				PRODUCT_NAME = Arabist2;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Arabist2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Arabist2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

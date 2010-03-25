@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'Arabist2' target in the 'Arabist2' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    #import <CoreData/CoreData.h>
+#endif
