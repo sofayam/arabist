@@ -211,7 +211,7 @@
 	
 	
 	ExistingWordViewController *existingWordViewController = [[ExistingWordViewController alloc] initWithNibName:@"ExistingWordViewController" bundle:nil];
-	[self.navigationController pushViewController:existingWordViewController animated:YES] ;
+	[self.navigationController  pushViewController:existingWordViewController animated:YES] ;
 	
 	//[self.navigationController presentModalViewController:existingWordViewController
 	//											 animated:YES];
