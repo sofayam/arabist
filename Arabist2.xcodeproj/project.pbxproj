@@ -111,20 +111,20 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4D5F358F11535CCB00A5D456 /* NewWordViewController.m */,
+				4D5F359611535D5C00A5D456 /* MyTableViewController.m */,
 				4D44F9A411536026005FF898 /* asihttpViewController.m */,
 				4D44F9A511536026005FF898 /* asihttpViewController.h */,
 				4D5F358A11535C9500A5D456 /* ExistingWordViewController.m */,
 				4D5F358C11535CAB00A5D456 /* ExistingWordViewController.h */,
 				1D3623240D0F684500981E51 /* Arabist2AppDelegate.h */,
 				1D3623250D0F684500981E51 /* Arabist2AppDelegate.m */,
-				4D5F359611535D5C00A5D456 /* MyTableViewController.m */,
 				4D5F358D11535CB800A5D456 /* MyTableViewController.h */,
 				4D973F461142CEDC00FFB119 /* AddViewController.m */,
 				4D973F451142CEDC00FFB119 /* AddViewController.h */,
 				4D973F281142CBF600FFB119 /* FilterViewController.h */,
 				4D973F291142CBF600FFB119 /* FilterViewController.m */,
 				4D5F359111535CD200A5D456 /* NewWordViewController.h */,
-				4D5F358F11535CCB00A5D456 /* NewWordViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

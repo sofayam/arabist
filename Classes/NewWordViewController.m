@@ -10,12 +10,22 @@
 
 
 @implementation NewWordViewController
-@synthesize englishField, arabicField, delegate, editedObject;
+@synthesize englishField, arabicField, rootField, delegate, editedObject, editedMeaning;
 
 - (IBAction) save {
-	[editedObject setValue:englishField.text forKey:@"english"];
-	[editedObject setValue:arabicField.text forKey:@"arabic"];
+	//[editedObject setValue:englishField.text forKey:@"english"]; // navigate to meaning & create object
+	[editedObject setValue:arabicField.text forKey:@"word"];
+	[editedObject setValue:rootField.text forKey:@"root"];
+	NSMutableSet *meanset = [editedObject mutableSetValueForKey:@"meanings"];
+	
+	[editedMeaning setValue:englishField.text forKey:@"meaning"];
+	[meanset addObject: editedMeaning];
+	
+	//[editedObject addMeaningsObject: editedMeaning];
+	//[editedObject setValue:englishField.text forKey:"meanings"];
+
 	[delegate newWordViewController: self didFinishWithSave: YES];
+	
 	
 }
 

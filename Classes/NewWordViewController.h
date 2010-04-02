@@ -17,17 +17,22 @@
 
 	UITextField *englishField;
 	UITextField *arabicField;
+	UITextField *rootField;
 	
 	id <NewWordViewControllerDelegate> delegate;
 	id editedObject;
+	id editedMeaning;
 }
 
 - (IBAction) save;
 
 @property (nonatomic, retain) IBOutlet UITextField *englishField;
 @property (nonatomic, retain) IBOutlet UITextField *arabicField;
+@property (nonatomic, retain) IBOutlet UITextField *rootField;
+
 @property (nonatomic, retain) id <NewWordViewControllerDelegate> delegate;
 @property (nonatomic, retain) id editedObject;
+@property (nonatomic, retain) id editedMeaning;
 
 @end
 

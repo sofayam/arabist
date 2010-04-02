@@ -16,8 +16,20 @@
 
 
 - (void) newWordViewController:(NewWordViewController *) controller didFinishWithSave:(BOOL) save {
-	[self dismissModalViewControllerAnimated:YES];
-	[self.tableView reloadData];
+	//[self dismissModalViewControllerAnimated:YES];
+	//[self.tableView reloadData];
+	NSError *error = nil;
+	NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
+	if (![context save:&error]) {
+		//Replace this implementation with code to handle the error appropriately.
+		
+		//abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+		
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+	
 }
 
 /*
@@ -64,37 +76,34 @@
 
 - (void)insertNewObject {
 
-	// see http://www.channels.com/episodes/show/5270034/Tutorial-7-Core-Data up to 19:00
+	// see http://www.channels.com/episodes/show/5270034/Tutorial-7-Core-Data up to 19:00 
+	// (although it turns out that there are some odd arch. decisions in there
 	
 	NewWordViewController *newWordViewController = [[NewWordViewController alloc] 
 													initWithNibName:@"NewWordViewController" 
 													bundle:nil];
-	[self.navigationController presentModalViewController:newWordViewController
-												 animated:YES];
+	
+	//[self.navigationController presentModalViewController:newWordViewController
+	//											 animated:YES];
 	 
 
 	NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
 	NSEntityDescription *entity = [[fetchedResultsController fetchRequest] entity];
-	NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+	NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name]
+																	  inManagedObjectContext:context];
 	
+	NSManagedObject *newManagedMeaning = [NSEntityDescription insertNewObjectForEntityForName:@"Meaning"
+																	  inManagedObjectContext:context];
 	newWordViewController.delegate = self;
 	
-	
 	newWordViewController.editedObject = newManagedObject;
+	newWordViewController.editedMeaning = newManagedMeaning;
+	
+	[self.navigationController pushViewController:newWordViewController animated:YES] ;
 	
 	[newWordViewController release];
-
-	 NSError *error = nil;
-	 if (![context save:&error]) {
-		//Replace this implementation with code to handle the error appropriately.
-		 
-		 //abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 
-		 NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		 abort();
-	 }
-	 
 	
+		
 	/*
 	
 	// Create a new instance of the entity managed by the fetched results controller.
@@ -189,8 +198,13 @@
 	// cell.textLabel.text = [NSString stringWithFormat: @"Row nr %d",indexPath.row];
 	
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [[managedObject valueForKey:@"arabic"] description];
-	cell.detailTextLabel.text = [[managedObject valueForKey:@"english"] description];
+	cell.textLabel.text = [[managedObject valueForKey:@"root"] description];
+	NSMutableSet *meanings = [managedObject mutableSetValueForKey:@"meanings"]; 
+	NSUInteger ct = [meanings count];
+//	NSString *meaning = (NSString *) [meanings anyObject];
+	id meaning = [meanings anyObject];
+	NSString *word = [[managedObject valueForKey:@"word"] description];
+	cell.detailTextLabel.text = [NSString stringWithFormat: @"%@ (%d)", word, ct];
 
     return cell;
 }
@@ -299,7 +313,7 @@
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"arabic" ascending:YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"root" ascending:YES];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];

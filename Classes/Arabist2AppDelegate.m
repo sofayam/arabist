@@ -50,6 +50,11 @@
 	
 	[window addSubview:tabBarController.view];        // adds the tab bar's view property to the window
 	[window makeKeyAndVisible];                       // makes the window visible
+	
+	
+	UIDevice *myDevice = [UIDevice currentDevice];
+	NSString *deviceUDID = [myDevice uniqueIdentifier];
+	NSLog(@"Device ID %@", deviceUDID);
 }
 
 /**
@@ -113,8 +118,9 @@
     if (persistentStoreCoordinator != nil) {
         return persistentStoreCoordinator;
     }
+	NSString *addir = [self applicationDocumentsDirectory] ;
 	
-    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"arabist.sqlite"]];
+    NSURL *storeUrl = [NSURL fileURLWithPath: [addir stringByAppendingPathComponent: @"arabist2.sqlite"]];
 	
 	NSError *error = nil;
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
