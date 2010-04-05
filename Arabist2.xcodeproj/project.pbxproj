@@ -14,6 +14,10 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		4D19EC461168B3830038607F /* arabist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D19EC451168B3830038607F /* arabist.xcdatamodeld */; };
+		4D1FE44F116A133D00C14990 /* morph.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FE44E116A133D00C14990 /* morph.m */; };
+		4D1FE452116A145900C14990 /* buck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FE451116A145900C14990 /* buck.m */; };
+		4D1FE458116A147D00C14990 /* MorphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FE456116A147D00C14990 /* MorphVC.m */; };
+		4D1FE459116A147D00C14990 /* MorphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FE457116A147D00C14990 /* MorphVC.xib */; };
 		4D44F99E1153600F005FF898 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9901153600F005FF898 /* ASIHTTPRequest.m */; };
 		4D44F99F1153600F005FF898 /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9911153600F005FF898 /* ASINSStringAdditions.m */; };
 		4D44F9A01153600F005FF898 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9931153600F005FF898 /* ASINetworkQueue.m */; };
@@ -56,6 +60,13 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Arabist2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arabist2_Prefix.pch; sourceTree = "<group>"; };
 		4D19EC471168B3830038607F /* arabist 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "arabist 2.xcdatamodel"; sourceTree = "<group>"; };
+		4D1FE44D116A133D00C14990 /* morph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = morph.h; sourceTree = "<group>"; };
+		4D1FE44E116A133D00C14990 /* morph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = morph.m; sourceTree = "<group>"; };
+		4D1FE450116A145900C14990 /* buck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buck.h; sourceTree = "<group>"; };
+		4D1FE451116A145900C14990 /* buck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = buck.m; sourceTree = "<group>"; };
+		4D1FE455116A147D00C14990 /* MorphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphVC.h; sourceTree = "<group>"; };
+		4D1FE456116A147D00C14990 /* MorphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphVC.m; sourceTree = "<group>"; };
+		4D1FE457116A147D00C14990 /* MorphVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MorphVC.xib; path = Classes/MorphVC.xib; sourceTree = "<group>"; };
 		4D44F9901153600F005FF898 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = ASIHTTP/ASIHTTPRequest.m; sourceTree = "<group>"; };
 		4D44F9911153600F005FF898 /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINSStringAdditions.m; path = ASIHTTP/ASINSStringAdditions.m; sourceTree = "<group>"; };
 		4D44F9921153600F005FF898 /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINSStringAdditions.h; path = ASIHTTP/ASINSStringAdditions.h; sourceTree = "<group>"; };
@@ -128,6 +139,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4D1FE450116A145900C14990 /* buck.h */,
+				4D1FE451116A145900C14990 /* buck.m */,
+				4D1FE44D116A133D00C14990 /* morph.h */,
+				4D1FE44E116A133D00C14990 /* morph.m */,
 				4D5F358F11535CCB00A5D456 /* NewWordViewController.m */,
 				4D5F359611535D5C00A5D456 /* MyTableViewController.m */,
 				1D3623250D0F684500981E51 /* Arabist2AppDelegate.m */,
@@ -146,6 +161,8 @@
 				4DEAA91D1168E2F600107D72 /* MeaningVC.m */,
 				4D59A7CD1168FF0200E2AD34 /* AddMeaningVC.h */,
 				4D59A7CE1168FF0200E2AD34 /* AddMeaningVC.m */,
+				4D1FE455116A147D00C14990 /* MorphVC.h */,
+				4D1FE456116A147D00C14990 /* MorphVC.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -193,6 +210,7 @@
 				4DEC78D61143C9EF0055A28C /* NewWordViewController.xib */,
 				4D67E0BA1142509200F6E8E7 /* MyTableViewController.xib */,
 				4DF63ECA114E3F9100490104 /* ExistingWordViewController.xib */,
+				4D1FE457116A147D00C14990 /* MorphVC.xib */,
 				8D1107310486CEB800E47090 /* Arabist2-Info.plist */,
 				4D19EC451168B3830038607F /* arabist.xcdatamodeld */,
 			);
@@ -305,6 +323,7 @@
 				4D44F9CC11536441005FF898 /* asihttpViewController.xib in Resources */,
 				4DEAA9201168E2F600107D72 /* MeaningVC.xib in Resources */,
 				4D59A7D11168FF0200E2AD34 /* AddMeaningVC.xib in Resources */,
+				4D1FE459116A147D00C14990 /* MorphVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +354,9 @@
 				4DEAA8A81168D3B200107D72 /* Meaning.m in Sources */,
 				4DEAA91F1168E2F600107D72 /* MeaningVC.m in Sources */,
 				4D59A7D01168FF0200E2AD34 /* AddMeaningVC.m in Sources */,
+				4D1FE44F116A133D00C14990 /* morph.m in Sources */,
+				4D1FE452116A145900C14990 /* buck.m in Sources */,
+				4D1FE458116A147D00C14990 /* MorphVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

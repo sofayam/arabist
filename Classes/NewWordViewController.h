@@ -28,6 +28,7 @@
 }
 
 - (IBAction) save;
+- (IBAction) morph;
 
 @property (nonatomic, retain) IBOutlet UITextField *englishField;
 @property (nonatomic, retain) IBOutlet UITextField *arabicField;

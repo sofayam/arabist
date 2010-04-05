@@ -7,6 +7,7 @@
 //
 
 #import "NewWordViewController.h"
+#import "MorphVC.h"
 
 
 @implementation NewWordViewController
@@ -33,6 +34,16 @@
 	
 }
 
+- (IBAction) morph {
+
+	if (rootField.text == @"") return;
+	MorphVC *morphVC = [[MorphVC alloc] initWithNibName: @"MorphVC" bundle: nil];
+	morphVC.root = rootField.text;
+	
+	[self.navigationController pushViewController:morphVC animated:YES] ;
+	[morphVC release];
+
+}
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
