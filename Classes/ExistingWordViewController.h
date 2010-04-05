@@ -7,25 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Entry.h"
 
 @interface ExistingWordViewController : UIViewController {
 	
-	IBOutlet UITextField *f1;
-	IBOutlet UITextField *f2;
+	IBOutlet UITextField *root;
+	IBOutlet UITextField *word;
 	IBOutlet UIScrollView *scr;
+	IBOutlet UITextView *meanings;
+	IBOutlet UITextView *tags;
 
 	BOOL keyboardVisible;
+	Entry *entry;
+	NSManagedObjectContext *context;
 }
 
+- (IBAction) editMeanings;
+- (IBAction) editTags;
 
 - (void)keyboardDidShow: (NSNotification *) notif;
 - (void)keyboardDidHide: (NSNotification *) notif;
+- (void)refreshMeanings;
 
 
-@property (nonatomic, retain) UITextField *f1;
-@property (nonatomic, retain) UITextField *f2;
+@property (nonatomic, retain) UITextField *root;
+@property (nonatomic, retain) UITextField *word;
 @property (nonatomic, retain) UIScrollView *scr;
-
+@property (nonatomic, retain) UITextView *meanings;
+@property (nonatomic, retain) UITextView *tags;
+@property (nonatomic, retain) Entry *entry;
+@property (nonatomic, retain) NSManagedObjectContext *context;
 
 @end

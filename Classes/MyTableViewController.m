@@ -98,6 +98,7 @@
 	
 	newWordViewController.editedObject = newManagedObject;
 	newWordViewController.editedMeaning = newManagedMeaning;
+//	newWordViewController.context = context;
 	
 	[self.navigationController pushViewController:newWordViewController animated:YES] ;
 	
@@ -224,7 +225,12 @@
     // Navigation logic may go here. Create and push another view controller.
 	
 	
-	ExistingWordViewController *existingWordViewController = [[ExistingWordViewController alloc] initWithNibName:@"ExistingWordViewController" bundle:nil];
+	ExistingWordViewController *existingWordViewController = [[ExistingWordViewController alloc] 
+															  initWithNibName:@"ExistingWordViewController" bundle:nil];
+
+	existingWordViewController.entry = [fetchedResultsController objectAtIndexPath:indexPath];
+
+	existingWordViewController.context = [fetchedResultsController managedObjectContext];
 	[self.navigationController pushViewController:existingWordViewController animated:YES] ;
 	
 	//[self.navigationController presentModalViewController:existingWordViewController

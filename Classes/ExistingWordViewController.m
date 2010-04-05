@@ -7,11 +7,12 @@
 //
 
 #import "ExistingWordViewController.h"
-
+#import "Meaning.h"
+#import "MeaningVC.h"
 
 @implementation ExistingWordViewController
 
-@synthesize scr, f1, f2;
+@synthesize root, word, meanings, tags, scr, entry, context;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -22,6 +23,32 @@
     return self;
 }
 */
+
+- (IBAction) editMeanings {
+	NSLog(@"clicking on meanings");
+	
+	MeaningVC *meaningVC = [[MeaningVC alloc]
+						initWithNibName:@"MeaningVC" 
+						bundle:nil];
+	// create array of meanings
+	meaningVC.context = context;
+	meaningVC.meaningsModel = [[NSMutableArray alloc] init];
+	meaningVC.meaningsSet = [entry mutableSetValueForKey:@"meanings"];
+	
+	for (Meaning *meaning in entry.meanings) {
+		[meaningVC.meaningsModel addObject:meaning];
+	}
+		
+	
+	[self.navigationController pushViewController:meaningVC animated:YES] ;
+	[meaningVC release];
+}
+- (IBAction) editTags {
+	NSLog(@"clicking on tags");
+	// Push a table view
+	// Give him the tags
+};
+
 
 
 #pragma mark -
@@ -37,6 +64,8 @@
 												 name: UIKeyboardDidHideNotification
 											   object: nil];
 	keyboardVisible = NO;
+	
+	
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -68,12 +97,37 @@
 	
 }
 
-
+- (void) refreshMeanings {
+	NSMutableArray *nma = [[NSMutableArray alloc] init];
+	NSString *mng = nil; //TODO string equality wierdness
+	for (Meaning *meaning in entry.meanings) {
+//		if (mng != @"") {
+//			mng = [NSString stringWithFormat:@"%@, ", mng]; 
+//		}
+		if (meaning.context && (meaning.context != @"")) {
+			mng = [NSString stringWithFormat:@"%@(%@)", meaning.meaning, meaning.context];
+		} else {
+			mng = [NSString stringWithFormat:@"%@", meaning.meaning];
+		}
+		[nma addObject: mng];
+	}
+	meanings.text = [nma componentsJoinedByString:@", "];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	scr.contentSize = self.view.frame.size;
+	// set up root, word and meanings
+	root.text = entry.root;
+	word.text = entry.word;
+	//NSString *mng = @"";  //TODO string equality wierdness
+	[self refreshMeanings];
+}
+
+- (void) viewDidAppear: (BOOL)animated {
+	[super viewDidAppear: animated];
+	[self refreshMeanings];
 }
 
 
@@ -106,8 +160,11 @@
 
 - (void)dealloc {
 	[scr release];
-	[f1 release];
-	[f2 release];
+	[root release];
+	[word release];
+	[meanings release];
+	[tags release];
+//	[entry release];
     [super dealloc];
 }
 

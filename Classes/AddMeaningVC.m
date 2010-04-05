@@ -1,36 +1,41 @@
 //
-//  NewWordViewController.m
+//  AddMeaningVC.m
 //  Arabist2
 //
-//  Created by mark andrew on 3/7/10.
+//  Created by mark andrew on 4/4/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "NewWordViewController.h"
+#import "AddMeaningVC.h"
+#import "Meaning.h"
 
+@implementation AddMeaningVC
+@synthesize meaningField, contextField, meaningsModel, meaningsSet, context;
 
-@implementation NewWordViewController
-@synthesize englishField, arabicField, contextField, rootField, delegate, editedObject, editedMeaning;
+- (IBAction) addMeaning {
+	
+	Meaning *meaning = [NSEntityDescription insertNewObjectForEntityForName:@"Meaning"
+																	   inManagedObjectContext:context];
+	meaning.meaning = meaningField.text;
+	meaning.context = contextField.text;
+	[meaningsModel addObject: meaning];
+	[meaningsSet addObject: meaning];
+	
+	NSError *error = nil;
+	
 
-- (IBAction) save {
-	//[editedObject setValue:englishField.text forKey:@"english"]; // navigate to meaning & create object
-	[editedObject setValue:arabicField.text forKey:@"word"];
-	[editedObject setValue:rootField.text forKey:@"root"];
-	[editedObject setValue:@"morphdummy" forKey:@"morph"];
 	
-	NSMutableSet *meanset = [editedObject mutableSetValueForKey:@"meanings"];
-	
-	[editedMeaning setValue:englishField.text forKey:@"meaning"];
-	[editedMeaning setValue:contextField.text forKey:@"context"]; //TODO not picking this up for some reason
-	
-	[meanset addObject: editedMeaning];
-	
-	//[editedObject addMeaningsObject: editedMeaning];
-	//[editedObject setValue:englishField.text forKey:"meanings"];
-
-	[delegate newWordViewController: self didFinishWithSave: YES];
+	if (![context save:&error]) {
+		//Replace this implementation with code to handle the error appropriately.
+		
+		//abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+		
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
 	
 	
+  // TODO refresh parent display	
 }
 
 /*
@@ -43,13 +48,12 @@
 }
 */
 
-
+/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	//[arabicField becomeFirstResponder];
 }
-
+*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -73,7 +77,6 @@
 
 
 - (void)dealloc {
-	[editedObject release];
     [super dealloc];
 }
 

@@ -130,6 +130,7 @@
 							 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
 							 
 							 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+
 	
 	
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil 
