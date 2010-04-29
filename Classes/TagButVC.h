@@ -8,14 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TagButVCDelegate;
 
-@interface TagButVC : UIViewController {
+
+@interface TagButVC : UIViewController <UIAlertViewDelegate> {
 	NSMutableDictionary *butDict;
+	id <TagButVCDelegate> delegate;
 }
 
 - (IBAction) create;
 
 @property (nonatomic, retain) NSMutableDictionary *butDict;
+@property (nonatomic, retain) id <TagButVCDelegate> delegate;
 
 
 @end
+
+@protocol TagButVCDelegate
+
+- (void) addTag: (NSString *) tag;
+
+@end
+

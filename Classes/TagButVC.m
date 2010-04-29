@@ -10,7 +10,11 @@
 
 
 @implementation TagButVC
-@synthesize butDict;
+@synthesize butDict, delegate;
+
+UIAlertView *tagAlert;
+UITextField *tagTextField;
+UIButton *currentButton;
 
 - (IBAction) create {
 	UIButton *tagButton;
@@ -37,10 +41,10 @@
 										 bwidth-gap, 
 										 bheight-gap
 										 );
-			[tagButton setTitle:@"" forState:UIControlStateNormal];
+			[tagButton setTitle:@"<undef>" forState:UIControlStateNormal];
 			//[tagButton setTitle:@"Other" forState:UIControlEventTouchDown];
 			[tagButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-			[tagButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchUpInside];
+			[tagButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown];
 			[tagButton addTarget:self action:@selector(touchDownRepeat:) forControlEvents:UIControlEventTouchDownRepeat];
 			
 			tagButton.backgroundColor = [UIColor clearColor];
@@ -58,13 +62,80 @@
 - (void) tagAction: (id) sender {
 	UIButton *resButton = (UIButton *) sender;
 	NSLog(@"Pressed tag button %d", resButton.tag);
+	[delegate addTag:resButton.currentTitle];
 
 }
+/*
+- (void) presentSheet //TODO This is undocumented SDKafvfv
+{
+	UIAlertView *alert = [[UIAlertView alloc] 
+						  initWithTitle: @"Enter Information" 
+						  message:@"Specify the Name and URL"
+						  delegate:self
+						  cancelButtonTitle:@"Cancel"
+						  otherButtonTitles:@"OK", nil];
+	[alert addTextFieldWithValue:@"" label:@"Enter Name"];
+	[alert addTextFieldWithValue:@"http://" label:@"Enter URL"];
+	
+	// Name field
+	UITextField *tf = [alert textFieldAtIndex:0];
+	tf.clearButtonMode = UITextFieldViewModeWhileEditing;
+	tf.keyboardType = UIKeyboardTypeAlphabet;
+	tf.keyboardAppearance = UIKeyboardAppearanceAlert;
+	tf.autocapitalizationType = UITextAutocapitalizationTypeWords;
+	tf.autocorrectionType = UITextAutocorrectionTypeNo;
+	
+	// URL field
+	tf = [alert textFieldAtIndex:1];
+	tf.clearButtonMode = UITextFieldViewModeWhileEditing;
+	tf.keyboardType = UIKeyboardTypeURL;
+	tf.keyboardAppearance = UIKeyboardAppearanceAlert;
+	tf.autocapitalizationType = UITextAutocapitalizationTypeNone;
+	tf.autocorrectionType = UITextAutocorrectionTypeNo;
+	
+	[alert show];
+}
+
+*/
+
 - (void) defineAction: (id) sender {
 	UIButton *resButton = (UIButton *) sender;
 	NSLog(@"Pressed define button %d", resButton.tag);
 	
+	// Ask for new name and assign to button (thanks to stackoverflow & BlueDolphin)
+	tagAlert = [[UIAlertView alloc] initWithTitle:@"Define new Tag" message:@"This gets covered" 
+													  delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+	tagTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 45.0, 260.0, 25.0)];
+	CGAffineTransform tagTransform = CGAffineTransformMakeTranslation(0.0, 130.0);
+	[tagAlert setTransform:tagTransform];
+	[tagTextField setBackgroundColor: [UIColor whiteColor]];
+	[tagAlert addSubview:tagTextField];
+	[tagAlert show];
+	//NSLog(@"Alert returned with text", tagTextField.text);	
+	//[tagAlert release];
+
+	
+} 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	NSLog(@"User Pressed Button %d with input %@\n", buttonIndex + 1, tagTextField.text);
+	if (buttonIndex == 1) 
+		[currentButton setTitle:tagTextField.text forState:UIControlStateNormal];
+	[tagTextField removeFromSuperview];
+	[tagTextField release];
+	[tagAlert release];
+	
+	//printf("User Pressed Button %d\n", buttonIndex + 1);
+	//printf("Text Field 1: %s\n", [[[alertView textFieldAtIndex:0] text] cStringUsingEncoding:1]);
+	//printf("Text Field 2: %s\n", [[[alertView textFieldAtIndex:1] text] cStringUsingEncoding:1]);	
+	//[alertView release];
 }
+
+
+//- (void) alertView: (UIAlertView*) clickedButtonAtIndex:(NSInteger) buttonIndex {
+//	NSLog(@"Clicked alert button %d", buttonIndex);
+//}
 
 //  Thanks to www.drobnik.com for this trick
 
@@ -74,6 +145,7 @@
 
 - (void) touchDownRepeat: (id) sender {
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(tagAction:) object:sender];
+	currentButton = (UIButton *) sender;
 	[self defineAction:sender];
 }
 
