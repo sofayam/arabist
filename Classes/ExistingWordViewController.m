@@ -9,6 +9,7 @@
 #import "ExistingWordViewController.h"
 #import "Meaning.h"
 #import "MeaningVC.h"
+#import "TagButVC.h"
 
 @implementation ExistingWordViewController
 
@@ -47,6 +48,12 @@
 	NSLog(@"clicking on tags");
 	// Push a table view
 	// Give him the tags
+	TagButVC *tagButVC = [[TagButVC alloc]
+						  initWithNibName:@"TagButVC" 
+						  bundle:nil];
+	[self.navigationController pushViewController:tagButVC animated:YES] ;
+	[tagButVC release];
+	
 };
 
 

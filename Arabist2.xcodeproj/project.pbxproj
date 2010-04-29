@@ -18,6 +18,9 @@
 		4D1FE452116A145900C14990 /* buck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FE451116A145900C14990 /* buck.m */; };
 		4D1FE458116A147D00C14990 /* MorphVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1FE456116A147D00C14990 /* MorphVC.m */; };
 		4D1FE459116A147D00C14990 /* MorphVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1FE457116A147D00C14990 /* MorphVC.xib */; };
+		4D3877631189742E006D550D /* TagButVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3877601189742E006D550D /* TagButVC.xib */; };
+		4D3877641189742E006D550D /* TagButVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3877611189742E006D550D /* TagButVC.m */; };
+		4D387772118976E4006D550D /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D387771118976E4006D550D /* Meaning.m */; };
 		4D44F99E1153600F005FF898 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9901153600F005FF898 /* ASIHTTPRequest.m */; };
 		4D44F99F1153600F005FF898 /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9911153600F005FF898 /* ASINSStringAdditions.m */; };
 		4D44F9A01153600F005FF898 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9931153600F005FF898 /* ASINetworkQueue.m */; };
@@ -41,7 +44,6 @@
 		4D973F481142CEDC00FFB119 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D973F461142CEDC00FFB119 /* AddViewController.m */; };
 		4D973F491142CEDC00FFB119 /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D973F471142CEDC00FFB119 /* AddViewController.xib */; };
 		4DEAA8A11168D35E00107D72 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAA8A01168D35E00107D72 /* Entry.m */; };
-		4DEAA8A81168D3B200107D72 /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAA8A71168D3B200107D72 /* Meaning.m */; };
 		4DEAA91F1168E2F600107D72 /* MeaningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAA91D1168E2F600107D72 /* MeaningVC.m */; };
 		4DEAA9201168E2F600107D72 /* MeaningVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEAA91E1168E2F600107D72 /* MeaningVC.xib */; };
 		4DEC781C1143AA1D0055A28C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEC781B1143AA1D0055A28C /* CoreData.framework */; };
@@ -67,6 +69,11 @@
 		4D1FE455116A147D00C14990 /* MorphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphVC.h; sourceTree = "<group>"; };
 		4D1FE456116A147D00C14990 /* MorphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphVC.m; sourceTree = "<group>"; };
 		4D1FE457116A147D00C14990 /* MorphVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MorphVC.xib; path = Classes/MorphVC.xib; sourceTree = "<group>"; };
+		4D3877601189742E006D550D /* TagButVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagButVC.xib; sourceTree = "<group>"; };
+		4D3877611189742E006D550D /* TagButVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagButVC.m; sourceTree = "<group>"; };
+		4D3877621189742E006D550D /* TagButVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagButVC.h; sourceTree = "<group>"; };
+		4D387770118976E4006D550D /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meaning.h; path = arabist.xcdatamodeld/Meaning.h; sourceTree = "<group>"; };
+		4D387771118976E4006D550D /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meaning.m; path = arabist.xcdatamodeld/Meaning.m; sourceTree = "<group>"; };
 		4D44F9901153600F005FF898 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = ASIHTTP/ASIHTTPRequest.m; sourceTree = "<group>"; };
 		4D44F9911153600F005FF898 /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINSStringAdditions.m; path = ASIHTTP/ASINSStringAdditions.m; sourceTree = "<group>"; };
 		4D44F9921153600F005FF898 /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINSStringAdditions.h; path = ASIHTTP/ASINSStringAdditions.h; sourceTree = "<group>"; };
@@ -106,8 +113,6 @@
 		4D973F471142CEDC00FFB119 /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddViewController.xib; path = Classes/AddViewController.xib; sourceTree = "<group>"; };
 		4DEAA89F1168D35E00107D72 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = arabist.xcdatamodeld/Entry.h; sourceTree = "<group>"; };
 		4DEAA8A01168D35E00107D72 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = arabist.xcdatamodeld/Entry.m; sourceTree = "<group>"; };
-		4DEAA8A61168D3B200107D72 /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meaning.h; sourceTree = "<group>"; };
-		4DEAA8A71168D3B200107D72 /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meaning.m; sourceTree = "<group>"; };
 		4DEAA91C1168E2F600107D72 /* MeaningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeaningVC.h; sourceTree = "<group>"; };
 		4DEAA91D1168E2F600107D72 /* MeaningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeaningVC.m; sourceTree = "<group>"; };
 		4DEAA91E1168E2F600107D72 /* MeaningVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MeaningVC.xib; path = Classes/MeaningVC.xib; sourceTree = "<group>"; };
@@ -139,10 +144,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4D1FE450116A145900C14990 /* buck.h */,
+				4D3877601189742E006D550D /* TagButVC.xib */,
+				4D3877611189742E006D550D /* TagButVC.m */,
+				4D3877621189742E006D550D /* TagButVC.h */,
 				4D1FE451116A145900C14990 /* buck.m */,
-				4D1FE44D116A133D00C14990 /* morph.h */,
 				4D1FE44E116A133D00C14990 /* morph.m */,
+				4D1FE456116A147D00C14990 /* MorphVC.m */,
 				4D5F358F11535CCB00A5D456 /* NewWordViewController.m */,
 				4D5F359611535D5C00A5D456 /* MyTableViewController.m */,
 				1D3623250D0F684500981E51 /* Arabist2AppDelegate.m */,
@@ -161,8 +168,9 @@
 				4DEAA91D1168E2F600107D72 /* MeaningVC.m */,
 				4D59A7CD1168FF0200E2AD34 /* AddMeaningVC.h */,
 				4D59A7CE1168FF0200E2AD34 /* AddMeaningVC.m */,
+				4D1FE450116A145900C14990 /* buck.h */,
 				4D1FE455116A147D00C14990 /* MorphVC.h */,
-				4D1FE456116A147D00C14990 /* MorphVC.m */,
+				4D1FE44D116A133D00C14990 /* morph.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -264,10 +272,10 @@
 		4DEAA8971168D2BE00107D72 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				4D387770118976E4006D550D /* Meaning.h */,
+				4D387771118976E4006D550D /* Meaning.m */,
 				4DEAA89F1168D35E00107D72 /* Entry.h */,
 				4DEAA8A01168D35E00107D72 /* Entry.m */,
-				4DEAA8A61168D3B200107D72 /* Meaning.h */,
-				4DEAA8A71168D3B200107D72 /* Meaning.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				4DEAA9201168E2F600107D72 /* MeaningVC.xib in Resources */,
 				4D59A7D11168FF0200E2AD34 /* AddMeaningVC.xib in Resources */,
 				4D1FE459116A147D00C14990 /* MorphVC.xib in Resources */,
+				4D3877631189742E006D550D /* TagButVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,12 +360,13 @@
 				4D44F9A611536026005FF898 /* asihttpViewController.m in Sources */,
 				4D44F9BD11536226005FF898 /* Reachability.m in Sources */,
 				4DEAA8A11168D35E00107D72 /* Entry.m in Sources */,
-				4DEAA8A81168D3B200107D72 /* Meaning.m in Sources */,
 				4DEAA91F1168E2F600107D72 /* MeaningVC.m in Sources */,
 				4D59A7D01168FF0200E2AD34 /* AddMeaningVC.m in Sources */,
 				4D1FE44F116A133D00C14990 /* morph.m in Sources */,
 				4D1FE452116A145900C14990 /* buck.m in Sources */,
 				4D1FE458116A147D00C14990 /* MorphVC.m in Sources */,
+				4D3877641189742E006D550D /* TagButVC.m in Sources */,
+				4D387772118976E4006D550D /* Meaning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,15 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MorphVCDelegate;
 
 @interface MorphVC : UITableViewController {
 	
 	NSString *root;
 	NSMutableArray *morphs;
+	id <MorphVCDelegate> delegate;
 
 }
 
 @property (nonatomic, retain) NSString *root;
 @property (nonatomic, retain) NSMutableArray *morphs;
 
+@property (nonatomic, retain) id <MorphVCDelegate> delegate;
+
 @end
+
+@protocol MorphVCDelegate
+
+- (void) setWord: (NSString *) word;
+
+@end
+

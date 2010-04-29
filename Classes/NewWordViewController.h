@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MorphVC.h"
 
 @protocol NewWordViewControllerDelegate;
 
 
 
 
-@interface NewWordViewController : UIViewController {
+@interface NewWordViewController : UIViewController <MorphVCDelegate> {
 
 	UITextField *englishField;
 	UITextField *arabicField;
@@ -29,6 +30,10 @@
 
 - (IBAction) save;
 - (IBAction) morph;
+- (IBAction) buck;
+
+- (void) setWord: (NSString *) word;
+
 
 @property (nonatomic, retain) IBOutlet UITextField *englishField;
 @property (nonatomic, retain) IBOutlet UITextField *arabicField;

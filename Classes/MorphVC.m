@@ -11,7 +11,7 @@
 
 
 @implementation MorphVC
-@synthesize root, morphs;
+@synthesize root, morphs, delegate;
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -108,6 +108,10 @@
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController];
 	// [anotherViewController release];
+	
+	// Write back to parent screen
+	[delegate setWord: [morphs objectAtIndex:indexPath.row]];
+	
 }
 
 

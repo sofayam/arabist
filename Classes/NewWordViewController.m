@@ -8,10 +8,21 @@
 
 #import "NewWordViewController.h"
 #import "MorphVC.h"
+#import "buck.h"
 
 
 @implementation NewWordViewController
 @synthesize englishField, arabicField, contextField, rootField, delegate, editedObject, editedMeaning;
+
+- (void) setWord: (NSString *) word {
+	arabicField.text = word;
+	NSLog(@"Called Delegate method setWord");
+}
+
+- (IBAction) buck {
+	rootField.text = [buck getArabFromBuck: rootField.text];
+	arabicField.text = [buck getArabFromBuck: arabicField.text];
+}
 
 - (IBAction) save {
 	//[editedObject setValue:englishField.text forKey:@"english"]; // navigate to meaning & create object
@@ -36,9 +47,10 @@
 
 - (IBAction) morph {
 
-	if (rootField.text == @"") return;
+	if (rootField.text == @"") return; //TODO Check it isn't empty and complain otherwise
 	MorphVC *morphVC = [[MorphVC alloc] initWithNibName: @"MorphVC" bundle: nil];
-	morphVC.root = rootField.text;
+	morphVC.root = rootField.text; 
+	morphVC.delegate = self;
 	
 	[self.navigationController pushViewController:morphVC animated:YES] ;
 	[morphVC release];

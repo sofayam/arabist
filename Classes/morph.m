@@ -12,11 +12,27 @@
 
 @implementation morph
 
-static NSArray *skels = nil;
+static NSArray *patterns = nil;
+
+enum vtype
+{
+	sound,
+	geminate,
+	hamzated1,
+	hamzated2,
+	hamzated3,
+	assimilated,
+	hollow,
+	defective
+};
+
+static NSArray *formISoundNouns = nil;
+static NSArray *formIGeminateNouns = nil;
+static NSArray *formIHamzated1Nouns = nil;
 
 + (void) initialize {
-	if (!skels) {
-		skels = 
+	if (!patterns) {
+		patterns = 
 		[[NSArray alloc] initWithObjects:
 		 @"1a2a3a",              //I
 		 @"1a2~a3a",             //II
@@ -30,15 +46,59 @@ static NSArray *skels = nil;
 		 @"<sta1o2a3a",          //X
 		 nil
 		 ];
+	};
+	
+	if (!formISoundNouns) { // p466
+		formISoundNouns = 
+			[[NSArray alloc] initWithObjects:
+			 @"1a23",
+			 @"1a2a3",
+			 @"1u23",
+			 @"1i23"
+			 @"1a23p",
+			 @"1u23p",
+			 @"1i23p",
+			 @"1u2w3",
+			 @"1u2w3p",
+			 @"1i2A3",
+			 @"1i2A3p",			 
+			 @"1a2A3p",				 
+			 @"1a23An",				 
+			 @"1i23An",				 			 
+			 @"ma12i3",
+			 @"ma12i3p",
+			 nil
+			 ];
+	}
+	if (!formIGeminateNouns) { // p466
+		formIGeminateNouns = 
+		[[NSArray alloc] initWithObjects:
+		 @"1a23",
+		 @"1a2a3",
+		 @"1a2w3p",
+		 @"1a2A3p",
+		 @"1i23p",
+		 nil
+		 ];
+	}
+	if (!formIHamzated1Nouns) { // p466
+		formIHamzated1Nouns = 
+		[[NSArray alloc] initWithObjects:
+		 @"1a23",
+		 @"1a2a3",
+		 @"1a2w3p",
+		 nil
+		 ];
 	}
 }
+	
 + (NSMutableArray*) getMorphs:(NSString*)root  {
+	
 	NSMutableArray *ret = [[NSMutableArray alloc] init];
-	int skelLength = skels.count;
-	for (int ski=0; ski < skelLength; ski++) {
+	for (int pidx=0; pidx < patterns.count; pidx++) {
 		// choose skeleton component
 		int rootLength = [root length];
-		NSString *scratch = [[NSString alloc] initWithString: [skels objectAtIndex: ski]];
+		NSString *scratch = [[NSString alloc] initWithString: [patterns objectAtIndex: pidx]];
 		 for (int roi=0; roi < rootLength; roi++) {
 			 //replace index in skel with number
 			 NSString *placeHolder = [NSString stringWithFormat: @"%i", roi+1];
