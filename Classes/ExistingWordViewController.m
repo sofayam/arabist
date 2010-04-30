@@ -56,6 +56,7 @@
 						  initWithNibName:@"TagButVC" 
 						  bundle:nil];
 	tagButVC.delegate = self;
+	tagButVC.context = context;
 	[self.navigationController pushViewController:tagButVC animated:YES] ;
 	[tagButVC release];
 	

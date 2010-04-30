@@ -21,6 +21,7 @@
 		4D3877631189742E006D550D /* TagButVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D3877601189742E006D550D /* TagButVC.xib */; };
 		4D3877641189742E006D550D /* TagButVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3877611189742E006D550D /* TagButVC.m */; };
 		4D387772118976E4006D550D /* Meaning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D387771118976E4006D550D /* Meaning.m */; };
+		4D3878B51189B5A7006D550D /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3878B41189B5A7006D550D /* Tag.m */; };
 		4D44F99E1153600F005FF898 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9901153600F005FF898 /* ASIHTTPRequest.m */; };
 		4D44F99F1153600F005FF898 /* ASINSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9911153600F005FF898 /* ASINSStringAdditions.m */; };
 		4D44F9A01153600F005FF898 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9931153600F005FF898 /* ASINetworkQueue.m */; };
@@ -69,11 +70,13 @@
 		4D1FE455116A147D00C14990 /* MorphVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphVC.h; sourceTree = "<group>"; };
 		4D1FE456116A147D00C14990 /* MorphVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphVC.m; sourceTree = "<group>"; };
 		4D1FE457116A147D00C14990 /* MorphVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MorphVC.xib; path = Classes/MorphVC.xib; sourceTree = "<group>"; };
-		4D3877601189742E006D550D /* TagButVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagButVC.xib; sourceTree = "<group>"; };
+		4D3877601189742E006D550D /* TagButVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TagButVC.xib; path = Classes/TagButVC.xib; sourceTree = "<group>"; };
 		4D3877611189742E006D550D /* TagButVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagButVC.m; sourceTree = "<group>"; };
 		4D3877621189742E006D550D /* TagButVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagButVC.h; sourceTree = "<group>"; };
 		4D387770118976E4006D550D /* Meaning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meaning.h; path = arabist.xcdatamodeld/Meaning.h; sourceTree = "<group>"; };
 		4D387771118976E4006D550D /* Meaning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meaning.m; path = arabist.xcdatamodeld/Meaning.m; sourceTree = "<group>"; };
+		4D3878B31189B5A7006D550D /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = arabist.xcdatamodeld/Tag.h; sourceTree = "<group>"; };
+		4D3878B41189B5A7006D550D /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = arabist.xcdatamodeld/Tag.m; sourceTree = "<group>"; };
 		4D44F9901153600F005FF898 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = ASIHTTP/ASIHTTPRequest.m; sourceTree = "<group>"; };
 		4D44F9911153600F005FF898 /* ASINSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINSStringAdditions.m; path = ASIHTTP/ASINSStringAdditions.m; sourceTree = "<group>"; };
 		4D44F9921153600F005FF898 /* ASINSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINSStringAdditions.h; path = ASIHTTP/ASINSStringAdditions.h; sourceTree = "<group>"; };
@@ -144,7 +147,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4D3877601189742E006D550D /* TagButVC.xib */,
 				4D3877611189742E006D550D /* TagButVC.m */,
 				4D3877621189742E006D550D /* TagButVC.h */,
 				4D1FE451116A145900C14990 /* buck.m */,
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				4DEAA91E1168E2F600107D72 /* MeaningVC.xib */,
+				4D3877601189742E006D550D /* TagButVC.xib */,
 				4D59A7CF1168FF0200E2AD34 /* AddMeaningVC.xib */,
 				4D44F9CB11536441005FF898 /* asihttpViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -276,6 +279,8 @@
 				4D387771118976E4006D550D /* Meaning.m */,
 				4DEAA89F1168D35E00107D72 /* Entry.h */,
 				4DEAA8A01168D35E00107D72 /* Entry.m */,
+				4D3878B31189B5A7006D550D /* Tag.h */,
+				4D3878B41189B5A7006D550D /* Tag.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				4D1FE458116A147D00C14990 /* MorphVC.m in Sources */,
 				4D3877641189742E006D550D /* TagButVC.m in Sources */,
 				4D387772118976E4006D550D /* Meaning.m in Sources */,
+				4D3878B51189B5A7006D550D /* Tag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,16 +7,17 @@
 //
 
 #import "TagButVC.h"
+#import "Tag.h"
 
 
 @implementation TagButVC
-@synthesize butDict, delegate;
+@synthesize butArr, butDict, delegate, context, fetchedResultsController;
 
 UIAlertView *tagAlert;
 UITextField *tagTextField;
 UIButton *currentButton;
 
-- (IBAction) create {
+- (IBAction) createButtons {
 	UIButton *tagButton;
 	int bwidth = 100;
 	int bheight = 30;
@@ -26,12 +27,10 @@ UIButton *currentButton;
 	int i,j;
 	
 	self.butDict = [[NSMutableDictionary alloc] init];
-
+	self.butArr = [[NSMutableArray alloc] init];
 	
-	for (i=0;i<3;i++) {
-		for (j=0; j<12; j++) {
-			
-		
+	for (j=0; j<12; j++) {
+		for (i=0;i<3;i++) {
 
 			tagButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				
@@ -54,9 +53,21 @@ UIButton *currentButton;
 			//stuff it in a dictionary
 			[butDict setObject: tagButton forKey: tagVal];
 			[self.view addSubview:tagButton];
+			//and in an array
+			[butArr addObject: tagButton];
 
 		}
 	}
+	
+	// Grab all the existing Tags from DB
+	
+	//NSArray *objs = [self fetchedResultsController].fetchedObjects;
+	// And assign them to the buttons
+	
+	// Then look at which tags are set for the current word
+	
+	// and set the buttons for those tags
+	
 };
 	 
 - (void) tagAction: (id) sender {
@@ -65,38 +76,7 @@ UIButton *currentButton;
 	[delegate addTag:resButton.currentTitle];
 
 }
-/*
-- (void) presentSheet //TODO This is undocumented SDKafvfv
-{
-	UIAlertView *alert = [[UIAlertView alloc] 
-						  initWithTitle: @"Enter Information" 
-						  message:@"Specify the Name and URL"
-						  delegate:self
-						  cancelButtonTitle:@"Cancel"
-						  otherButtonTitles:@"OK", nil];
-	[alert addTextFieldWithValue:@"" label:@"Enter Name"];
-	[alert addTextFieldWithValue:@"http://" label:@"Enter URL"];
-	
-	// Name field
-	UITextField *tf = [alert textFieldAtIndex:0];
-	tf.clearButtonMode = UITextFieldViewModeWhileEditing;
-	tf.keyboardType = UIKeyboardTypeAlphabet;
-	tf.keyboardAppearance = UIKeyboardAppearanceAlert;
-	tf.autocapitalizationType = UITextAutocapitalizationTypeWords;
-	tf.autocorrectionType = UITextAutocorrectionTypeNo;
-	
-	// URL field
-	tf = [alert textFieldAtIndex:1];
-	tf.clearButtonMode = UITextFieldViewModeWhileEditing;
-	tf.keyboardType = UIKeyboardTypeURL;
-	tf.keyboardAppearance = UIKeyboardAppearanceAlert;
-	tf.autocapitalizationType = UITextAutocapitalizationTypeNone;
-	tf.autocorrectionType = UITextAutocorrectionTypeNo;
-	
-	[alert show];
-}
 
-*/
 
 - (void) defineAction: (id) sender {
 	UIButton *resButton = (UIButton *) sender;
@@ -112,24 +92,38 @@ UIButton *currentButton;
 	[tagAlert addSubview:tagTextField];
 	[tagAlert show];
 	//NSLog(@"Alert returned with text", tagTextField.text);	
-	//[tagAlert release];
-
 	
 } 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	NSLog(@"User Pressed Button %d with input %@\n", buttonIndex + 1, tagTextField.text);
-	if (buttonIndex == 1) 
+	if (buttonIndex == 1) {
 		[currentButton setTitle:tagTextField.text forState:UIControlStateNormal];
+		[self addTag: tagTextField.text]; 
+	}
 	[tagTextField removeFromSuperview];
 	[tagTextField release];
 	[tagAlert release];
 	
-	//printf("User Pressed Button %d\n", buttonIndex + 1);
-	//printf("Text Field 1: %s\n", [[[alertView textFieldAtIndex:0] text] cStringUsingEncoding:1]);
-	//printf("Text Field 2: %s\n", [[[alertView textFieldAtIndex:1] text] cStringUsingEncoding:1]);	
-	//[alertView release];
+}
+
+- (void) addTag: (NSString *) name {
+	NSLog(@"Adding Tag with name %@", name);
+	// Find out if this tag already exists - then simply set up the button
+	Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag"
+													 inManagedObjectContext:context];
+	tag.name = name;
+	NSError *error = nil;
+	if (![context save:&error]) {
+		//Replace this implementation with code to handle the error appropriately.
+		
+		//abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+		
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
 }
 
 
@@ -154,19 +148,111 @@ UIButton *currentButton;
  // want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-		[self create];
+		[self createButtons];
         // Custom initialization
     }
     return self;
 }
 
+- (NSFetchedResultsController *)fetchedResultsController {
+    
+    if (fetchedResultsController != nil) {
+        return fetchedResultsController;
+    }
+    
+    /*
+	 Set up the fetched results controller.
+	 */
+	// Create the fetch request for the entity.
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	// Edit the entity name as appropriate.
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:context];
+	[fetchRequest setEntity:entity];
+	
+	// Set the batch size to a suitable number.
+	[fetchRequest setFetchBatchSize:20];
+	
+	// Edit the sort key as appropriate.
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+	
+	[fetchRequest setSortDescriptors:sortDescriptors];
+	
+	// Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] 
+								initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    aFetchedResultsController.delegate = self;
+	self.fetchedResultsController = aFetchedResultsController;
+	
+	[aFetchedResultsController release];
+	[fetchRequest release];
+	[sortDescriptor release];
+	[sortDescriptors release];
+	
+	return fetchedResultsController;
+}    
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-*/
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+	
+	// Grab all the existing Tags from DB
+	NSError *error = nil;
+	NSArray *objs = nil;
+	[[self fetchedResultsController] performFetch:&error];
+	objs = [self fetchedResultsController].fetchedObjects;
+	
+	NSLog(@"Found %d Tags", objs.count);
+	
+	if (!objs.count) { // Bung some stuff in there just to get things going
+		NSLog(@"Filling up");
+		Tag *tag1 = [NSEntityDescription insertNewObjectForEntityForName:@"Tag"
+												 inManagedObjectContext:context]; 
+		tag1.name = @"politics";
+		Tag *tag2 = [NSEntityDescription insertNewObjectForEntityForName:@"Tag"
+												 inManagedObjectContext:context]; 
+		tag2.name = @"culture";		
+
+		if (![context save:&error]) {
+			//Replace this implementation with code to handle the error appropriately.
+			
+			//abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+			
+			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+			abort();
+		}
+		
+		
+		//NSArray *objs = [context executeFetchRequest:myrequest error:&error]
+		//[[self fetchedResultsController] fetchRequest];
+		[[self fetchedResultsController] performFetch:&error];
+		objs = [self fetchedResultsController].fetchedObjects;
+		NSLog(@"Found %d Tags", objs.count);
+	}
+	// And assign them to the buttons
+	//NSArray *buts = [NSArray arrayWithArray: [butDict allValues]];
+	int ctr = 0;
+	for (Tag* tag in objs) {
+		NSLog(@"Found Tag %@", tag.name);
+		UIButton *but = (UIButton*) [butArr objectAtIndex:ctr]; 
+		[but setTitle:tag.name forState:UIControlStateNormal];
+		ctr++;
+	}
+	
+	// Then look at which tags are set for the current word
+	
+	// and set the buttons for those tags
+	
+
+}
+
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
