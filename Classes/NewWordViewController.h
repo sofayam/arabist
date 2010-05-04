@@ -8,18 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "MorphVC.h"
+#import "TagButVC.h"
 
 @protocol NewWordViewControllerDelegate;
 
 
 
 
-@interface NewWordViewController : UIViewController <MorphVCDelegate> {
+@interface NewWordViewController : UIViewController <MorphVCDelegate, TagButVCDelegate> {
 
 	UITextField *englishField;
 	UITextField *arabicField;
 	UITextField *rootField;
 	UITextField *contextField;
+	
+	NSManagedObjectContext *context;
 	
 	id <NewWordViewControllerDelegate> delegate;
 	id editedObject;
@@ -31,6 +34,7 @@
 - (IBAction) save;
 - (IBAction) morph;
 - (IBAction) buck;
+- (IBAction) editTags;
 
 - (void) setWord: (NSString *) word;
 
@@ -43,6 +47,8 @@
 @property (nonatomic, retain) id <NewWordViewControllerDelegate> delegate;
 @property (nonatomic, retain) id editedObject;
 @property (nonatomic, retain) id editedMeaning;
+
+@property (nonatomic, retain) NSManagedObjectContext *context;
 
 @end
 

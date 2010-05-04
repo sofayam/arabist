@@ -2,7 +2,7 @@
 //  Tag.m
 //  Arabist2
 //
-//  Created by mark andrew on 4/29/10.
+//  Created by mark andrew on 5/4/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 @implementation Tag 
 
 @dynamic name;
+@dynamic button;
 @dynamic tagged;
 
 @end

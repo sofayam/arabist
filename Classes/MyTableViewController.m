@@ -98,7 +98,7 @@
 	
 	newWordViewController.editedObject = newManagedObject;
 	newWordViewController.editedMeaning = newManagedMeaning;
-//	newWordViewController.context = context;
+	newWordViewController.context = context;
 	
 	[self.navigationController pushViewController:newWordViewController animated:YES] ;
 	

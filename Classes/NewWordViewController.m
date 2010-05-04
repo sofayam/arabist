@@ -12,12 +12,34 @@
 
 
 @implementation NewWordViewController
-@synthesize englishField, arabicField, contextField, rootField, delegate, editedObject, editedMeaning;
+@synthesize context, englishField, arabicField, contextField, rootField, delegate, editedObject, editedMeaning;
 
 - (void) setWord: (NSString *) word {
 	arabicField.text = word;
 	NSLog(@"Called Delegate method setWord");
 }
+
+//TODO Implement
+- (void) addTag: (NSString *) tag {
+	
+}
+
+// TODO Refactor
+
+- (IBAction) editTags {
+	NSLog(@"clicking on tags");
+	// Push a table view
+	// Give him the tags
+	TagButVC *tagButVC = [[TagButVC alloc]
+						  initWithNibName:@"TagButVC" 
+						  bundle:nil];
+	tagButVC.delegate = self;
+	tagButVC.context = context;
+	[self.navigationController pushViewController:tagButVC animated:YES] ;
+	[tagButVC release];
+	
+};
+
 
 - (IBAction) buck {
 	rootField.text = [buck getArabFromBuck: rootField.text];
@@ -26,6 +48,8 @@
 
 - (IBAction) save {
 	//[editedObject setValue:englishField.text forKey:@"english"]; // navigate to meaning & create object
+	[self buck];
+	
 	[editedObject setValue:arabicField.text forKey:@"word"];
 	[editedObject setValue:rootField.text forKey:@"root"];
 	[editedObject setValue:@"morphdummy" forKey:@"morph"];
