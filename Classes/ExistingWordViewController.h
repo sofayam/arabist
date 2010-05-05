@@ -12,8 +12,10 @@
 
 @interface ExistingWordViewController : UIViewController /* <TagButVCDelegate> */ {
 	
-	IBOutlet UITextField *root;
-	IBOutlet UITextField *word;
+	IBOutlet UITextField *rootOld;
+	IBOutlet UITextField *wordOld;
+	IBOutlet UILabel *root;
+	IBOutlet UILabel *word;
 	IBOutlet UIScrollView *scr;
 	IBOutlet UITextView *meanings;
 	IBOutlet UITextView *tags;
@@ -31,8 +33,8 @@
 - (void)refreshMeanings;
 
 
-@property (nonatomic, retain) UITextField *root;
-@property (nonatomic, retain) UITextField *word;
+@property (nonatomic, retain) UILabel *root; 
+@property (nonatomic, retain) UILabel *word;
 @property (nonatomic, retain) UIScrollView *scr;
 @property (nonatomic, retain) UITextView *meanings;
 @property (nonatomic, retain) UITextView *tags;

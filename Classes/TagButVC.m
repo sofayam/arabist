@@ -19,6 +19,40 @@ UIAlertView *tagAlert;
 UITextField *tagTextField;
 UIButton *currentButton;
 
+- (void) flushToDB {
+
+	NSError *error = nil;
+	if (![context save:&error]) {
+		//Replace this implementation with code to handle the error appropriately.
+	
+		//abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+	
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+}
+
+
+- (NSArray*) getTagsFromDB {
+	NSError *error = nil;
+	[[self fetchedResultsController] performFetch:&error];
+	return [self fetchedResultsController].fetchedObjects;
+}
+
+- (Tag*) getTagFromDBWithName: (NSString*) name {
+	NSArray *objs = [self getTagsFromDB];
+	NSString *tagName;
+	for (Tag* tag in objs) {
+		NSLog(@"Comparing %@ with %@", tag.name, name);
+		tagName = tag.name;
+		if ([tag.name isEqual: name]) {
+			return tag;
+		}
+	}
+	return nil;
+	// TODO Error handling
+}
+
 - (int) butTagi:(int) i butTagj:(int) j {
 	return (i*100)+j;
 }
@@ -69,15 +103,7 @@ UIButton *currentButton;
 
 		}
 	}
-	
-	// Grab all the existing Tags from DB
-	
-	//NSArray *objs = [self fetchedResultsController].fetchedObjects;
-	// And assign them to the buttons
-	
-	// Then look at which tags are set for the current word
-	
-	// and set the buttons for those tags
+
 	
 };
 	 
@@ -87,7 +113,18 @@ UIButton *currentButton;
 	/*[delegate addTag:resButton.currentTitle];*/
 	
 	// Now actually add a tag to an entry
-
+	NSString *lab = resButton.currentTitle;
+	Tag* tag = [self getTagFromDBWithName:lab];
+	
+	/*
+	NSNumber *num = [NSNumber numberWithInt: currentButton.tag];
+	UIButton *but = [butDict objectForKey:num];
+	 */
+	if (tag) {
+		[entry addTagsObject: tag];
+		/*[butDict objectForKey: [NSNumber numberWithInt: currentButton.tag]]];*/
+		[self flushToDB];
+	}
 }
 
 
@@ -128,16 +165,8 @@ UIButton *currentButton;
 													 inManagedObjectContext:context];
 	tag.name = name;
 	tag.button = button;
-	NSError *error = nil;
-	if (![context save:&error]) {
-		//Replace this implementation with code to handle the error appropriately.
-		
-		//abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-	}
 	
+	[self flushToDB];	
 }
 
 
@@ -217,10 +246,12 @@ UIButton *currentButton;
     [super viewDidAppear:animated];
 	
 	// Grab all the existing Tags from DB
-	NSError *error = nil;
+
 	NSArray *objs = nil;
-	[[self fetchedResultsController] performFetch:&error];
-	objs = [self fetchedResultsController].fetchedObjects;
+	
+	objs = [self getTagsFromDB];
+//	[[self fetchedResultsController] performFetch:&error];
+//	objs = [self fetchedResultsController].fetchedObjects;
 	
 	NSLog(@"Found %d Tags", objs.count);
 	
@@ -236,20 +267,14 @@ UIButton *currentButton;
 		tag2.button = [self butKeyi:1 butKeyj:0];
 
 
-		if (![context save:&error]) {
-			//Replace this implementation with code to handle the error appropriately.
-			
-			//abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-			
-			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-			abort();
-		}
+		[self flushToDB];
 		
 		
 		//NSArray *objs = [context executeFetchRequest:myrequest error:&error]
 		//[[self fetchedResultsController] fetchRequest];
-		[[self fetchedResultsController] performFetch:&error];
-		objs = [self fetchedResultsController].fetchedObjects;
+		//[[self fetchedResultsController] performFetch:&error];
+		//objs = [self fetchedResultsController].fetchedObjects;
+		objs = [self getTagsFromDB];
 		NSLog(@"Found %d Tags", objs.count);
 	}
 	// And assign them to the buttons
@@ -267,9 +292,13 @@ UIButton *currentButton;
 		if (ctr > maxi*maxj) break;
 	}
 	
-	// Then look at which tags are set for the current word
 	
-	// and set the buttons for those tags
+	// Grab all the existing Tags from DB for current word
+	// and set the buttons for those tags to special color
+	
+	for (Tag* tag in entry.tags) {
+		[[butDict objectForKey: tag.button] setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+	}
 	
 
 }
