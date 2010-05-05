@@ -24,11 +24,11 @@
     return self;
 }
 */
-
+/*
 - (void) addTag: (NSString *) tag {
 	NSLog(@"Adding Tag %@", tag);
 }
-
+*/
 - (IBAction) editMeanings {
 	NSLog(@"clicking on meanings");
 	
@@ -55,8 +55,9 @@
 	TagButVC *tagButVC = [[TagButVC alloc]
 						  initWithNibName:@"TagButVC" 
 						  bundle:nil];
-	tagButVC.delegate = self;
+	/*tagButVC.delegate = self;*/
 	tagButVC.context = context;
+	tagButVC.entry = entry;
 	[self.navigationController pushViewController:tagButVC animated:YES] ;
 	[tagButVC release];
 	

@@ -9,13 +9,24 @@
 #import "TagButVC.h"
 #import "Tag.h"
 
+const int maxi = 3;
+const int maxj = 12;
 
 @implementation TagButVC
-@synthesize butArr, butDict, delegate, context, fetchedResultsController;
+@synthesize butArr, butDict, entry, context, fetchedResultsController;
 
 UIAlertView *tagAlert;
 UITextField *tagTextField;
 UIButton *currentButton;
+
+- (int) butTagi:(int) i butTagj:(int) j {
+	return (i*100)+j;
+}
+
+- (NSNumber*) butKeyi:(int) i  butKeyj:(int) j {
+	int tag = [self butTagi: i butTagj: j];
+	return [NSNumber numberWithInt:tag]; 
+}
 
 - (IBAction) createButtons {
 	UIButton *tagButton;
@@ -29,8 +40,8 @@ UIButton *currentButton;
 	self.butDict = [[NSMutableDictionary alloc] init];
 	self.butArr = [[NSMutableArray alloc] init];
 	
-	for (j=0; j<12; j++) {
-		for (i=0;i<3;i++) {
+	for (j=0; j<maxj; j++) {
+		for (i=0;i<maxi;i++) {
 
 			tagButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 				
@@ -47,11 +58,11 @@ UIButton *currentButton;
 			[tagButton addTarget:self action:@selector(touchDownRepeat:) forControlEvents:UIControlEventTouchDownRepeat];
 			
 			tagButton.backgroundColor = [UIColor clearColor];
-			int tag = (i*100)+j;
-			NSNumber *tagVal = [NSNumber numberWithInt: tag];
-			tagButton.tag = tag;
+			int tag = [self butTagi: i butTagj: j];
+			//NSString *tagVal = [NSString stringWithFormat:@"%d", tag];
+			tagButton.tag = tag; //TODO do we really need tags (in the Cocoa sense?)
 			//stuff it in a dictionary
-			[butDict setObject: tagButton forKey: tagVal];
+			[butDict setObject: tagButton forKey: [NSNumber numberWithInt: tag]];
 			[self.view addSubview:tagButton];
 			//and in an array
 			[butArr addObject: tagButton];
@@ -73,7 +84,9 @@ UIButton *currentButton;
 - (void) tagAction: (id) sender {
 	UIButton *resButton = (UIButton *) sender;
 	NSLog(@"Pressed tag button %d", resButton.tag);
-	[delegate addTag:resButton.currentTitle];
+	/*[delegate addTag:resButton.currentTitle];*/
+	
+	// Now actually add a tag to an entry
 
 }
 
@@ -100,7 +113,7 @@ UIButton *currentButton;
 	NSLog(@"User Pressed Button %d with input %@\n", buttonIndex + 1, tagTextField.text);
 	if (buttonIndex == 1) {
 		[currentButton setTitle:tagTextField.text forState:UIControlStateNormal];
-		[self addTag: tagTextField.text]; 
+		[self addTag: tagTextField.text forButton: [NSNumber numberWithInt: currentButton.tag]]; 
 	}
 	[tagTextField removeFromSuperview];
 	[tagTextField release];
@@ -108,12 +121,13 @@ UIButton *currentButton;
 	
 }
 
-- (void) addTag: (NSString *) name {
+- (void) addTag: (NSString *) name forButton: (NSNumber*) button{
 	NSLog(@"Adding Tag with name %@", name);
 	// Find out if this tag already exists - then simply set up the button
 	Tag *tag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag"
 													 inManagedObjectContext:context];
 	tag.name = name;
+	tag.button = button;
 	NSError *error = nil;
 	if (![context save:&error]) {
 		//Replace this implementation with code to handle the error appropriately.
@@ -215,9 +229,12 @@ UIButton *currentButton;
 		Tag *tag1 = [NSEntityDescription insertNewObjectForEntityForName:@"Tag"
 												 inManagedObjectContext:context]; 
 		tag1.name = @"politics";
+		tag1.button = [self butKeyi:0 butKeyj:0];
 		Tag *tag2 = [NSEntityDescription insertNewObjectForEntityForName:@"Tag"
 												 inManagedObjectContext:context]; 
-		tag2.name = @"culture";		
+		tag2.name = @"culture";	
+		tag2.button = [self butKeyi:1 butKeyj:0];
+
 
 		if (![context save:&error]) {
 			//Replace this implementation with code to handle the error appropriately.
@@ -237,12 +254,17 @@ UIButton *currentButton;
 	}
 	// And assign them to the buttons
 	//NSArray *buts = [NSArray arrayWithArray: [butDict allValues]];
-	int ctr = 0;
+	int ctr = 1;
 	for (Tag* tag in objs) {
-		NSLog(@"Found Tag %@", tag.name);
-		UIButton *but = (UIButton*) [butArr objectAtIndex:ctr]; 
+		NSLog(@"Found Tag %@ %@", tag.name, tag.button);
+		
+		UIButton *but = (UIButton*) [butDict objectForKey: tag.button]; 
+		
+		//UIButton *but = (UIButton*) [butArr objectAtIndex: [Number tag.button]; 
+		
 		[but setTitle:tag.name forState:UIControlStateNormal];
 		ctr++;
+		if (ctr > maxi*maxj) break;
 	}
 	
 	// Then look at which tags are set for the current word

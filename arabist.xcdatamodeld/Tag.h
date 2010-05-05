@@ -2,7 +2,7 @@
 //  Tag.h
 //  Arabist2
 //
-//  Created by mark andrew on 5/4/10.
+//  Created by mark andrew on 5/5/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * button;
+@property (nonatomic, retain) NSNumber * button;
 @property (nonatomic, retain) NSSet* tagged;
 
 @end

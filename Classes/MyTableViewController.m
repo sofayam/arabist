@@ -203,7 +203,7 @@
 	NSMutableSet *meanings = [managedObject mutableSetValueForKey:@"meanings"]; 
 	NSUInteger ct = [meanings count];
 //	NSString *meaning = (NSString *) [meanings anyObject];
-	id meaning = [meanings anyObject];
+	//id meaning = [meanings anyObject];
 	NSString *word = [[managedObject valueForKey:@"word"] description];
 	cell.detailTextLabel.text = [NSString stringWithFormat: @"%@ (%d)", word, ct];
 

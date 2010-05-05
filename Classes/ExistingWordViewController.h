@@ -10,7 +10,7 @@
 #import "Entry.h"
 #import "TagButVC.h"
 
-@interface ExistingWordViewController : UIViewController <TagButVCDelegate> {
+@interface ExistingWordViewController : UIViewController /* <TagButVCDelegate> */ {
 	
 	IBOutlet UITextField *root;
 	IBOutlet UITextField *word;

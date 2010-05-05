@@ -15,7 +15,7 @@
 
 
 
-@interface NewWordViewController : UIViewController <MorphVCDelegate, TagButVCDelegate> {
+@interface NewWordViewController : UIViewController <MorphVCDelegate /*, TagButVCDelegate */> {
 
 	UITextField *englishField;
 	UITextField *arabicField;

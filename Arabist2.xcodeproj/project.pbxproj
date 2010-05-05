@@ -34,6 +34,7 @@
 		4D44F9B211536197005FF898 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D44F9B111536197005FF898 /* libz.1.2.3.dylib */; };
 		4D44F9BD11536226005FF898 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D44F9BC11536226005FF898 /* Reachability.m */; };
 		4D44F9CC11536441005FF898 /* asihttpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D44F9CB11536441005FF898 /* asihttpViewController.xib */; };
+		4D5663C311916B0C00CE1596 /* TODOs in Resources */ = {isa = PBXBuildFile; fileRef = 4D5663C211916B0C00CE1596 /* TODOs */; };
 		4D59A7D01168FF0200E2AD34 /* AddMeaningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D59A7CE1168FF0200E2AD34 /* AddMeaningVC.m */; };
 		4D59A7D11168FF0200E2AD34 /* AddMeaningVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D59A7CF1168FF0200E2AD34 /* AddMeaningVC.xib */; };
 		4D5F358B11535C9500A5D456 /* ExistingWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5F358A11535C9500A5D456 /* ExistingWordViewController.m */; };
@@ -98,6 +99,7 @@
 		4D44F9BB11536226005FF898 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4D44F9BC11536226005FF898 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4D44F9CB11536441005FF898 /* asihttpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = asihttpViewController.xib; sourceTree = "<group>"; };
+		4D5663C211916B0C00CE1596 /* TODOs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODOs; sourceTree = "<group>"; };
 		4D59A7CD1168FF0200E2AD34 /* AddMeaningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMeaningVC.h; sourceTree = "<group>"; };
 		4D59A7CE1168FF0200E2AD34 /* AddMeaningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMeaningVC.m; sourceTree = "<group>"; };
 		4D59A7CF1168FF0200E2AD34 /* AddMeaningVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AddMeaningVC.xib; path = Classes/AddMeaningVC.xib; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4D5663C211916B0C00CE1596 /* TODOs */,
 				4DEAA8971168D2BE00107D72 /* DataModel */,
 				4D44F98B11535FFA005FF898 /* ASIHTTP */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -338,6 +341,7 @@
 				4D59A7D11168FF0200E2AD34 /* AddMeaningVC.xib in Resources */,
 				4D1FE459116A147D00C14990 /* MorphVC.xib in Resources */,
 				4D3877631189742E006D550D /* TagButVC.xib in Resources */,
+				4D5663C311916B0C00CE1596 /* TODOs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

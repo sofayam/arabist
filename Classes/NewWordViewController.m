@@ -19,10 +19,11 @@
 	NSLog(@"Called Delegate method setWord");
 }
 
-//TODO Implement
+/*
 - (void) addTag: (NSString *) tag {
 	
 }
+*/
 
 // TODO Refactor
 
@@ -33,8 +34,9 @@
 	TagButVC *tagButVC = [[TagButVC alloc]
 						  initWithNibName:@"TagButVC" 
 						  bundle:nil];
-	tagButVC.delegate = self;
+	/*tagButVC.delegate = self;*/
 	tagButVC.context = context;
+	tagButVC.entry = editedObject;
 	[self.navigationController pushViewController:tagButVC animated:YES] ;
 	[tagButVC release];
 	
